@@ -15,21 +15,25 @@ export default function Header({}: Props) {
       >
         <SocialIcon
           url="https://www.youtube.com/channel/UCxHNyqo_MNVQYsQMhwH94-A"
-          fgColor="gray"
-          bgColor="transparent"
+          fgColor="#fff"
           target="_blank"
+          style={{ height: 35, width: 35 }}
+          className="mx-2 hover:scale-150"
         />
         <SocialIcon
           url="https://www.linkedin.com/in/ellisvelandia/"
-          fgColor="gray"
-          bgColor="transparent"
+          fgColor="#fff"
           target="_blank"
+          style={{ height: 35, width: 35 }}
+          className="mx-2 hover:scale-150"
         />
         <SocialIcon
           url="https://github.com/Ellisvelandia"
-          fgColor="gray"
-          bgColor="transparent"
+          fgColor="#fff"
           target="_blank"
+          bgColor="#000"
+          style={{ height: 35, width: 35 }}
+          className="mx-2 hover:scale-150"
         />
       </motion.div>
 
