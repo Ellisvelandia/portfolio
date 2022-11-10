@@ -20,13 +20,13 @@ export default function Header({}: Props) {
           target="_blank"
         />
         <SocialIcon
-          url="https://www.youtube.com/channel/UCxHNyqo_MNVQYsQMhwH94-A"
+          url="https://www.linkedin.com/in/ellisvelandia/"
           fgColor="gray"
           bgColor="transparent"
           target="_blank"
         />
         <SocialIcon
-          url="https://www.youtube.com/channel/UCxHNyqo_MNVQYsQMhwH94-A"
+          url="https://github.com/Ellisvelandia"
           fgColor="gray"
           bgColor="transparent"
           target="_blank"
