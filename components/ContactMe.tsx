@@ -13,7 +13,10 @@ type Props = {};
 
 export default function ContactMe({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
+
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:eyis619@gmail?subject${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} ${formData.email}`;
+  };
 
   return (
     <div className="h-screen relative flex flex-col text-center md:flex-row  md:text-left max-w-7xl justify-evenly mx-auto items-center">
@@ -32,15 +35,15 @@ export default function ContactMe({}: Props) {
         <div className="space-y-6">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#fd0000] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+123456789</p>
+            <p className="text-2xl">+573125668800</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#fd0000] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">ellis619@gmail.com</p>
+            <p className="text-2xl">eyis619@gmail.com</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#fd0000] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">123 Developer</p> 
+            <p className="text-2xl">Ellis velandia Developer</p>
           </div>
         </div>
 

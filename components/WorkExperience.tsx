@@ -15,7 +15,7 @@ export default function WorkExperience({}: Props): ReactElement {
       <h3 className="absolute top-20 uppercase mt-8 tracking-[20px] text-gray-500 text-2xl text-center">
         Experience
       </h3>
-      <div className="w-full flex flex-col p-10 snap-x snap-mandatory items-center justify-center">
+      <div className="w-full flex flex-col p-10 snap-x snap-mandatory items-center justify-center scrollbar scrollbar-thumb-red-600/80 scrollbar-track-red-900/20">
         <ExperienceCard />
         {/* <ExperienceCard /> */}
       </div>

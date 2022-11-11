@@ -1,16 +1,23 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 interface Props {}
 
-export default function Projects({}: Props): ReactElement {
+export default function Projects({}: Props) {
   const projects = [1, 2, 3, 4, 5];
+
   return (
-    <div className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-x-full justify-evenly mx-auto items-center z-0">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-x-full justify-evenly mx-auto items-center z-0 "
+    >
       <h3 className="absolute top-20 uppercase mt-8 tracking-[20px] text-gray-500 text-2xl text-center">
         Projects
       </h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-red-600/80 scrollbar-track-red-900/20">
         {projects.map((project, i) => (
           <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44">
             <motion.img
@@ -39,6 +46,6 @@ export default function Projects({}: Props): ReactElement {
       </div>
 
       <div className="w-full absolute top-[30%] bg-[#fd0000]/10 left-0 h-[500px] -skew-y-12"></div>
-    </div>
+    </motion.div>
   );
 }
