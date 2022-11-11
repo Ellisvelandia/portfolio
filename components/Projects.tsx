@@ -12,7 +12,7 @@ export default function Projects({}: Props): ReactElement {
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
         {projects.map((project, i) => (
-          <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
+          <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44">
             <motion.img
               initial={{ y: -300, opacity: 0 }}
               transition={{ duration: 1.2 }}
