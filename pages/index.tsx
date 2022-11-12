@@ -41,7 +41,7 @@ export default function Home() {
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
-              className="h-14 w-24 rounded-full filter grayscale hover:grayscale-0 hover:animate-spin transition-transform	delay-150 cursor-pointer"
+              className="h-14 w-24 rounded-full filter grayscale hover:grayscale-0 hover:animate-spin cursor-pointer"
               src="https://previews.dropbox.com/p/thumb/ABsXfNDCAfScofTrJkzov4KIN-ToRRTJDx6HGdKkW-re_F8r8ZMmyteFrvEUD7PyySo2oWCAUTWEw5sTDpoApgY9xILRXS2AjE4z5EYOrIRRDbJXmRglmeJWfbUPOh1Za7qTyaJphJfiUCxcDCE1puVOwXdhwyCRqR1dIGwuYsln7FUEbxGRt6_iY5KhqxQFgXbQC8JE-QhdLBcY23u8PAt1d_8AoD8yQQ4zigKVjRve9EvtDliL9Ugr1k5jVoqDgFBkh2NbDVnTv_VgyeEbq9K0AGuIyKqCkfUq9-z2nN8H0qhOJ3VOAa1eAmEAe9wTUtIv51U84NV6E_BF6dqUQLvsRiNbKEhzeJI8YxRW2Ae1BKo9wvt7-u-WL0DZDaAwonQ/p.png"
               alt="footer"
             />
