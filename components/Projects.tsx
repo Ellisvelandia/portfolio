@@ -5,7 +5,7 @@ import { urlFor } from "../sanity";
 
 interface Props {
   projects: Project[];
-}
+} 
 
 function Projects({ projects }: Props) {
   return (

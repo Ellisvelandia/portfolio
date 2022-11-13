@@ -18,6 +18,7 @@ function WorkExperience({ experiences }: Props) {
       <h3 className="absolute top-20 uppercase mt-8 tracking-[20px] text-gray-500 text-2xl text-center">
         Experience
       </h3>
+      
       <div className="w-full flex flex-col p-10 snap-x snap-mandatory items-center justify-center">
         {experiences?.map((experience) => (
           <ExperienceCard key={experience._id} experience={experience} />

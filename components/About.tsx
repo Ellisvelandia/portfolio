@@ -28,11 +28,13 @@ function About({ pageInfo }: Props) {
         alt="myimage"
         className="-mb-20 md:mb-0 mt-10 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
       />
+
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
           Here is a <span>litle</span> background
         </h4>
         <p className="text-base">{pageInfo?.backgroundInformation}</p>
+
         <a
           className="flex items-center w-full justify-center px-2 py-1 my-3 animate-bounce"
           href="https://drive.google.com/uc?export=download&id=1ZEZYm9WwkBPiY4387VJ35kE7YkFiavka"

@@ -17,8 +17,9 @@ function ExperienceCard({ experience }: Props) {
         viewport={{ once: true }}
         className="w-32 mt-8 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
-        alt="larnu-log"
+        alt=""
       />
+
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">LarnU</h4>
         <p className="flex space-x-2 my-2">First generation larnU</p>
@@ -28,7 +29,7 @@ function ExperienceCard({ experience }: Props) {
               key={technology._id}
               className="h-10 w-10 rounded-full"
               src={urlFor(technology.image).url()}
-              alt="technologies"
+              alt=""
             />
           ))}
         </div>
@@ -38,6 +39,7 @@ function ExperienceCard({ experience }: Props) {
             ? "Present"
             : new Date(experience.dataEnded).toDateString()}
         </p>
+        
         <ul className="list-disc space-y-4 ml-5 text-lg">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>

@@ -59,10 +59,11 @@ function ContactMe({}: Props) {
               type="text"
             />
             <input
+              type="email"
+              id="email"
               {...register("email")}
               placeholder="Email"
               className="contactInput"
-              type="email"
             />
           </div>
 
