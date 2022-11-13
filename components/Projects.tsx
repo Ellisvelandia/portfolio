@@ -7,7 +7,7 @@ interface Props {
   projects: Project[];
 }
 
-export default function Projects({ projects }: Props) {
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -68,3 +68,5 @@ export default function Projects({ projects }: Props) {
     </motion.div>
   );
 }
+
+export default Projects;

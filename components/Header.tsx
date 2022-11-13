@@ -8,7 +8,7 @@ type Props = {
   socials: Social[];
 };
 
-export default function Header({ socials }: Props) {
+function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-center justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -51,3 +51,5 @@ export default function Header({ socials }: Props) {
     </header>
   );
 }
+
+export default Header;

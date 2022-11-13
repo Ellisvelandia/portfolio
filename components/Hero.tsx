@@ -9,12 +9,12 @@ type Props = {
   pageInfo: PageInfo;
 };
 
-export default function Hero({ pageInfo }: Props) {
-  const [text, count] = useTypewriter({
+function Hero({ pageInfo }: Props) {
+  const [text] = useTypewriter({
     words: [
       `Hi, The Name's ${pageInfo?.name}`,
       "Man Loves Anime And Cats",
-      "But Loves To Code More 🐱‍👓",
+      "But Loves To Code More",
     ],
     loop: true,
     delaySpeed: 2000,
@@ -26,7 +26,7 @@ export default function Hero({ pageInfo }: Props) {
       <img
         className="relative rounded-full h-40 w-40 mx-auto object-cover hover:scale-150"
         src={urlFor(pageInfo?.heroImage).url()}
-        alt="image"
+        alt=""
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
@@ -54,3 +54,5 @@ export default function Hero({ pageInfo }: Props) {
     </div>
   );
 }
+
+export default Hero;

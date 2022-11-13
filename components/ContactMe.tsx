@@ -11,11 +11,11 @@ type Inputs = {
 
 type Props = {};
 
-export default function ContactMe({}: Props) {
+function ContactMe({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:eyis619@gmail?subject${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} ${formData.email}`;
+    window.location.href = `mailto:eyis619@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
   };
 
   return (
@@ -26,7 +26,7 @@ export default function ContactMe({}: Props) {
 
       <div className="flex flex-col space-y-6 mt-12 ">
         <h4 className="text-4xl font-semibold text-gray-500 text-center">
-          I have got just what you neeed.
+          I have got just what you neeed.{" "}
           <span className="decoration-[#fd0000]/50 underline hover:text-gray-200">
             Lest Talk.
           </span>
@@ -77,7 +77,7 @@ export default function ContactMe({}: Props) {
             {...register("message")}
             placeholder="Message"
             className="contactInput"
-          ></textarea>
+          />
           <button
             type="submit"
             className="bg-[#fd0000] py-5 px-10 rounded-md text-white font-bold text-lg hover:bg-red-800"
@@ -89,3 +89,5 @@ export default function ContactMe({}: Props) {
     </div>
   );
 }
+
+export default ContactMe;

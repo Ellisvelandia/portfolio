@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
@@ -7,7 +7,7 @@ interface Props {
   experiences: Experience[];
 }
 
-export default function WorkExperience({ experiences }: Props): ReactElement {
+function WorkExperience({ experiences }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,3 +26,5 @@ export default function WorkExperience({ experiences }: Props): ReactElement {
     </motion.div>
   );
 }
+
+export default WorkExperience;
