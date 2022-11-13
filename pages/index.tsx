@@ -23,14 +23,14 @@ type Props = {
   socials: Social[];
 };
 
-const Home = ({ pageInfo, experiences, projects, skills, socials }) => {
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <div
       className="w-full bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 
     scrollbar scrollbar-thumb-red-600/80 scrollbar-track-red-900/20"
     >
       <Head>
-        <title>Ellis Portfolio</title>
+        <title>{pageInfo?.name} - Portfolio</title>
       </Head>
       <Header socials={socials} />
       <section id="hero" className="snap-start">
