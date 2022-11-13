@@ -43,8 +43,8 @@ export interface Experience extends SanityBody {
   _type: "experience";
   company: string;
   companyImage: Image;
-  dateStarted: date;
-  dateEnded: date;
+  dataStarted: date;
+  dataEnded: date;
   isCurrentlyWorkingHere: boolean;
   jobTitle: string;
   points: string[];

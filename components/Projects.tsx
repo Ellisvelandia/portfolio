@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-interface Props {}
+interface Props {
+  projects: Project[];
+}
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
-
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -13,32 +15,46 @@ export default function Projects({}: Props) {
       transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-x-full justify-evenly mx-auto items-center z-0 "
     >
-      <h3 className="absolute top-20 uppercase mt-8 tracking-[20px] text-gray-500 text-2xl text-center">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl text-center">
         Projects
       </h3>
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-thumb-red-600/80 scrollbar-track-red-900/20">
-        {projects.map((project, i) => (
-          <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44">
-            <motion.img
-              initial={{ y: -300, opacity: 0 }}
-              transition={{ duration: 1.2 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              src="https://previews.dropbox.com/p/thumb/ABtl6VnZPWits-NXiQC15ynyUtT5EebrjmBByIVWET7zPZJRLsRxGoV9kNjc-KjY7DvoPopbXlWS1hq77ZhjUhM_8VcVGWKd_cL0yjU_Ejgb9ld3WGfWSSFNeqV0uCnqPpjjzCmcdqc568a6NVAfiT_d7XGmb25OrR1M0GGKX5JbBpsWRYdwvqVVicWq0CUVjywn9ZFg87_Nk4L_yAOZG11hisx5LXFAcZM96y1MfQqOvfsuTWMVf0JeYNMma4knUAGTKmWKrEb8OIR04ze4HQvfRGYWGcwRAw79_5-PO8SWIUyDFYAwWyF8PbF67r6hqm09OZMSDl5gBYYuQKBFEGvSGp4Rz9RCNi0IwACaDIWjz4_X4_Ukgg5NLqSztnIpzs8/p.png"
-              alt="real-state"
-            />
+        {projects?.map((project, i) => (
+          <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center p-20 md:p-44 md:mt-4">
+            <a href={project?.linkToBuild} target="_blank">
+              <motion.img
+                initial={{ y: -300, opacity: 0 }}
+                transition={{ duration: 1.2 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                src={urlFor(project?.image).url()}
+                alt=""
+                className="hover:scale-50"
+              />
+            </a>
 
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+            <div className="space-y-2 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#fd00000]/50">
-                  Case Study {i + 1} of {projects.length}:
+                  Project {i + 1} of {projects.length} : <br />
                 </span>
-                Real state
+                {project?.title}
               </h4>
+
+              <div className="flex items-center space-x-2 justify-center">
+                {project?.technologies.map((technology) => (
+                  <img
+                    className="h-10 w-10"
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt=""
+                  />
+                ))}
+              </div>
+
               <p className="text-lg text-center md:text-left">
-                a real estate application with chakra-ui, React and Next.js, has
-                a beautiful home screen with several really amazing properties.
+                {project?.summary}
               </p>
             </div>
           </div>

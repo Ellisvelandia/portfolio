@@ -32,7 +32,18 @@ export default function About({ pageInfo }: Props) {
         <h4 className="text-4xl font-semibold">
           Here is a <span>litle</span> background
         </h4>
-        <p className="text-base text-2xl">{pageInfo?.backgroundInformation}</p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <a
+          className="flex items-center w-full justify-center px-2 py-1 my-3 animate-bounce"
+          href="https://drive.google.com/uc?export=download&id=1ZEZYm9WwkBPiY4387VJ35kE7YkFiavka"
+          download="Ellis_Cv"
+        >
+          <img
+            src="./pikachu.png"
+            alt="pikachu"
+            className="flex justify-center m-0  w-20 h-20"
+          />
+        </a>
       </div>
     </motion.div>
   );

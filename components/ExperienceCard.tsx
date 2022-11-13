@@ -33,20 +33,15 @@ export default function ExperienceCard({ experience }: Props) {
           ))}
         </div>
         <p className="uppercase py-5 text-gray-300">
-          {new Date(experience.dateStarted).toDateString()} -
+          {new Date(experience.dataStarted).toDateString()} -
           {experience.isCurrentlyWorkingHere
             ? "Present"
-            : new Date(experience.dateEnded).toDateString()}
+            : new Date(experience.dataEnded).toDateString()}
         </p>
-
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>
-            project development with javascript,Typescript,
-            nodeJs,nextjs,mongodb, express & reactJs
-          </li>
-          <li>daily meetings with members of the first bootcamp generation</li>
-          <li>perform unit tests on your projects</li>
-          <li>live code for knowledge reinforcement</li>
+          {experience.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
         </ul>
       </div>
     </article>
