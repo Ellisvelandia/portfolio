@@ -1,10 +1,13 @@
 import React, { ReactElement } from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
+import { Experience } from "../typings";
 
-interface Props {}
+interface Props {
+  experiences: Experience[];
+}
 
-export default function WorkExperience({}: Props): ReactElement {
+export default function WorkExperience({ experiences }: Props): ReactElement {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,9 +19,10 @@ export default function WorkExperience({}: Props): ReactElement {
         Experience
       </h3>
       <div className="w-full flex flex-col p-10 snap-x snap-mandatory items-center justify-center">
-        <ExperienceCard />
+        {experiences?.map((experience) => (
+          <ExperienceCard key={experience._id} experience={experience} />
+        ))}
       </div>
     </motion.div>
   );
 }
-

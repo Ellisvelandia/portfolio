@@ -1,12 +1,12 @@
-import { Pageinfo } from "../typings";
+import { PageInfo } from "../typings";
 
-export const fetchSkills = async () => {
+export const fetchPageInfo = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`
   );
 
   const data = await res.json();
-  const Pageinfo: Pageinfo = data.Pageinfo;
+  const pageInfo: PageInfo = data.pageInfo;
 
-  return Pageinfo;
+  return pageInfo;
 };

@@ -1,3 +1,10 @@
+interface SanityBody {
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _updateAt: string;
+}
+
 interface Image {
   _type: "image";
   asset: {
@@ -6,7 +13,7 @@ interface Image {
   };
 }
 
-export interface Pageinfo extends SanityBody {
+export interface PageInfo extends SanityBody {
   _type: "pageInfo";
   address: string;
   backgroundInformation: string;
@@ -36,12 +43,12 @@ export interface Experience extends SanityBody {
   _type: "experience";
   company: string;
   companyImage: Image;
-   dateStarted: Date;
-  dateEnded: Date;
+  dateStarted: date;
+  dateEnded: date;
   isCurrentlyWorkingHere: boolean;
   jobTitle: string;
   points: string[];
-  techologies: Technology[];
+  technologies: Technology[];
 }
 
 export interface Project extends SanityBody {
