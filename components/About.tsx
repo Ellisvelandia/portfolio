@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
+import Image from "next/image";
+import pikachu from "../public/pikachu.png";
 
 type Props = {
   pageInfo: PageInfo;
@@ -34,18 +36,20 @@ function About({ pageInfo }: Props) {
           Here is a <span>litle</span> background
         </h4>
         <p className="text-base">{pageInfo?.backgroundInformation}</p>
-
-        <a
-          className="flex items-center w-full justify-center px-2 py-1 my-3 animate-bounce"
-          href="https://drive.google.com/uc?export=download&id=1ZEZYm9WwkBPiY4387VJ35kE7YkFiavka"
-          download="Ellis_Cv"
-        >
-          <img
-            src="./pikachu.png"
-            alt="pikachu"
-            className="flex justify-center m-0  w-20 h-20"
-          />
-        </a>
+        <div>
+          <a
+            className="flex items-center w-full justify-center px-2 py-1 my-3 animate-bounce"
+            href="https://drive.google.com/uc?export=download&id=1ZEZYm9WwkBPiY4387VJ35kE7YkFiavka"
+            download="Ellis_Cv"
+          >
+            <Image
+              src={pikachu}
+              alt=""
+              className="flex justify-center m-0  w-20 h-20"
+              objectFit="contain"
+            />
+          </a>
+        </div>
       </div>
     </motion.div>
   );

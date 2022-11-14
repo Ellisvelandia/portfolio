@@ -17,6 +17,7 @@ function Header({ socials }: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center"
       >
+        {/* Social Icons */}
         {socials.map((social) => (
           <SocialIcon
             key={social._id}
@@ -29,25 +30,20 @@ function Header({ socials }: Props) {
         ))}
       </motion.div>
 
-      <Link href="#contact">
-        <motion.div
-          initial={{ x: 500, opacity: 0, scale: 0.5 }}
-          animate={{ x: 0, opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5 }}
-          className="flex flex-row items-center text-gray-300 cursor-pointer"
-        >
-          <SocialIcon
-            className="cursor-pointer"
-            fgColor="#fd0000"
-            bgColor="transparent"
-            network="email"
-            target="_blank"
-          />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-            Get In Touch
-          </p>
-        </motion.div>
-      </Link>
+      <motion.div
+        initial={{ x: 500, opacity: 0, scale: 0.5 }}
+        animate={{ x: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5 }}
+        className="flex flex-row items-center text-gray-300 cursor-pointer"
+      >
+        <SocialIcon
+          className="cursor-pointer"
+          network="email"
+          fgColor="#fd0000"
+          bgColor="transparent"
+        />
+        <Link href="#contact">Get In Touch</Link>
+      </motion.div>
     </header>
   );
 }

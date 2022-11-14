@@ -14,6 +14,8 @@ import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
+import Image from "next/image";
+import logo from "../public/Fbat.png";
 
 type Props = {
   pageInfo: PageInfo;
@@ -31,7 +33,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
     scrollbar scrollbar-thumb-red-600/80 scrollbar-track-red-900/20"
       >
         <Head>
-          <title>{pageInfo?.name} - Portfolio</title>
+          <title>{`Portfolio ${pageInfo?.name}`}</title>
         </Head>
 
         <Header socials={socials} />
@@ -63,10 +65,11 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <Link href="#hero">
           <footer className="sticky bottom-5 w-full cursor-pointer">
             <div className="flex items-center justify-center">
-              <img
+              <Image
                 className="h-14 w-24 m-0 rounded-full filter grayscale hover:grayscale-0 hover:animate-spin cursor-pointer"
-                src="./Fbat.png"
+                src={logo}
                 alt=""
+                objectFit="contain"
               />
             </div>
           </footer>
@@ -93,6 +96,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-    revalidate: 10,
+    // revalidate: 10,
   };
 };
