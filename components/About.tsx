@@ -46,7 +46,6 @@ function About({ pageInfo }: Props) {
               src={pikachu}
               alt=""
               className="flex justify-center m-0  w-20 h-20"
-              objectFit="contain"
             />
           </a>
         </div>

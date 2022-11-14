@@ -69,7 +69,6 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
                 className="h-14 w-24 m-0 rounded-full filter grayscale hover:grayscale-0 hover:animate-spin cursor-pointer"
                 src={logo}
                 alt=""
-                objectFit="contain"
               />
             </div>
           </footer>
