@@ -27,25 +27,25 @@ function About({ pageInfo }: Props) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
-        alt="myimage"
-        className="-mb-20 md:mb-0 mt-10 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
+        alt=""
+        className="hover:scale-250 -mb-20 md:mb-0 mt-10 flex-shrink-0 w-44 h-44 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[600px] xl:h-[600px] object-cover"
       />
 
-      <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
+      <div className="space-y-0 px-0 m-0 md:px-10">
+        <h4 className="text-2xl font-semibold">
           Here is a <span>litle</span> background
         </h4>
         <p className="text-base">{pageInfo?.backgroundInformation}</p>
         <div>
           <a
-            className="flex items-center w-full justify-center px-2 py-1 my-3 animate-bounce"
+            className="flex items-center w-full justify-center"
             href="https://drive.google.com/uc?export=download&id=1ZEZYm9WwkBPiY4387VJ35kE7YkFiavka"
             download="Ellis_Cv"
           >
             <Image
               src={pikachu}
               alt=""
-              className="flex justify-center m-0  w-20 h-20"
+              className="flex justify-center m-0  w-16 h-16 animate-bounce"
             />
           </a>
         </div>
