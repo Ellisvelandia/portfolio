@@ -35,7 +35,7 @@ function About({ pageInfo }: Props) {
         <h4 className="text-2xl font-semibold">
           Here is a <span>litle</span> background
         </h4>
-        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <p className="text-sm md:text-base">{pageInfo?.backgroundInformation}</p>
         <div>
           <a
             className="flex items-center w-full justify-center"

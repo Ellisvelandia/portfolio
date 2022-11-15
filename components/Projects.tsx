@@ -27,7 +27,7 @@ function Projects({ projects }: Props) {
           >
             <a href={project?.linkToBuild} target="_blank">
               <motion.img
-                initial={{ y: -300, opacity: 0 }}
+                initial={{ y: -100, opacity: 0 }}
                 transition={{ duration: 1.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
