@@ -33,12 +33,11 @@ function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 src={urlFor(project?.image).url()}
                 alt=""
-                className="hover:scale-50"
               />
             </a>
 
             <div className="space-y-2 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+              <h4 className="text-2xl font-semibold text-center">
                 <span className="underline decoration-[#fd00000]/50">
                   Project {i + 1} of {projects.length} : <br />
                 </span>
@@ -56,7 +55,7 @@ function Projects({ projects }: Props) {
                 ))}
               </div>
 
-              <p className="text-lg text-center md:text-left">
+              <p className="text-md text-center md:text-left">
                 {project?.summary}
               </p>
             </div>

@@ -28,7 +28,7 @@ function About({ pageInfo }: Props) {
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt=""
-        className="hover:scale-250 -mb-20 md:mb-0 mt-10 flex-shrink-0 w-44 h-44 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[600px] xl:h-[600px] object-cover"
+        className="-mb-20 md:mb-0 mt-10 flex-shrink-0 w-44 h-44 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[600px] xl:h-[600px] object-cover"
       />
 
       <div className="space-y-0 px-0 m-0 md:px-10">
