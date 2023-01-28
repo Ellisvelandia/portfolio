@@ -1,8 +1,6 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import About from "../components/About";
-import ContactMe from "../components/ContactMe";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
@@ -14,8 +12,11 @@ import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
-import Image from "next/image";
-import logo from "../public/Fbat.png";
+import dynamic from "next/dynamic";
+
+const ContactMe = dynamic(() => import("../components/ContactMe"), {
+  ssr: false,
+});
 
 type Props = {
   pageInfo: PageInfo;
@@ -61,18 +62,6 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <section id="contact" className="snap-start">
           <ContactMe />
         </section>
-
-        <Link href="#hero">
-          <footer className="sticky bottom-5 w-full cursor-pointer">
-            <div className="flex items-center justify-center">
-              <Image
-                className="h-14 w-24 m-0 rounded-full filter grayscale hover:grayscale-0 hover:animate-spin cursor-pointer"
-                src={logo}
-                alt=""
-              />
-            </div>
-          </footer>
-        </Link>
       </div>
     </>
   );
