@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-// import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import emailjs from "@emailjs/browser";
 
@@ -36,9 +35,9 @@ const ContactMe: React.FC<Props> = () => {
     max-w-full px-10 justify-evenly mx-auto lg:items-center md:items-end items-center md:mb-1 mb-12"
       >
         <div className="flex flex-col md:mt-20 mt-32 md:space-y-6 space-y-2 mb-10">
-        <h3 className="uppercase mt-2 tracking-[20px] text-gray-500 text-2xl text-center">
-          Contact
-        </h3>
+          <h3 className="uppercase mt-2 tracking-[20px] text-gray-500 text-2xl text-center">
+            Contact
+          </h3>
 
           <h4 className="max-w-7xl md:text-2xl text-base font-semibold text-center text-gray-500 pt-1">
             I am interested in opportunities as a developer and I would like to
@@ -58,10 +57,11 @@ const ContactMe: React.FC<Props> = () => {
             </div>
             <div className="flex items-center justify-center space-x-5">
               <MapPinIcon className="text-[#fd0000] h-7 w-7 animate-pulse" />
-              <p className="md:text-lg text-base">Carmen de Apicala - Colombia</p>
+              <p className="md:text-lg text-base">
+                Carmen de Apicala - Colombia
+              </p>
             </div>
           </div>
-    
 
           <form
             ref={refForm}
@@ -86,14 +86,7 @@ const ContactMe: React.FC<Props> = () => {
               Submit
             </button>
           </form>
-          </div>
-
-          {/* <MapContainer center={[4.1338603, -74.7219903]} zoom={8}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[4.1338603, -74.7219903]}>
-              <Popup>Ellis velandia lives here, is now writing code</Popup>
-            </Marker>
-          </MapContainer> */}
+        </div>
       </div>
     </>
   );

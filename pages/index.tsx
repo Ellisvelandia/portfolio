@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
+import ContactMe from "../components/ContactMe";
 import { Experience, PageInfo, Project, Skill, Social } from "../typings";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
@@ -14,7 +15,7 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
 import dynamic from "next/dynamic";
 
-const ContactMe = dynamic(() => import("../components/ContactMe"), {
+const Map = dynamic(() => import("../components/Map"), {
   ssr: false,
 });
 
@@ -35,6 +36,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       >
         <Head>
           <title>{`Portfolio ${pageInfo?.name}`}</title>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
         </Head>
 
         <Header socials={socials} />
@@ -61,6 +63,10 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
         <section id="contact" className="snap-start">
           <ContactMe />
+        </section>
+
+         <section id="location" className="snap-start">
+          <Map />
         </section>
       </div>
     </>
