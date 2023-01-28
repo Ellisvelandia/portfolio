@@ -1,15 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
-import Image from "next/image";
-import pikachu from "../public/pikachu.png";
 
 type Props = {
   pageInfo: PageInfo;
 };
 
 function About({ pageInfo }: Props) {
+  const [text] = useTypewriter({
+    words: [
+   `${pageInfo?.backgroundInformation}`,
+    ],
+    loop: true,
+    delaySpeed: 8000,
+  });
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,24 +37,12 @@ function About({ pageInfo }: Props) {
         className="-mb-20 md:mb-0 mt-10 flex-shrink-0 w-44 h-44 rounded-full md:rounded-lg md:w-64 md:h-96 xl:w-[600px] xl:h-[600px] object-cover"
       />
 
-      <div className="space-y-0 px-0 m-0 md:px-10">
-        <h4 className="text-2xl font-semibold">
+      <div className="space-y-4 px-2 m-0 md:px-10 mt-2">
+        <h4 className="text-4xl font-semibold text-center mb-2">
           Here is a <span>litle</span> background
         </h4>
-        <p className="text-sm md:text-base">{pageInfo?.backgroundInformation}</p>
-        <div>
-          <a
-            className="flex items-center w-full justify-center"
-            href="https://drive.google.com/uc?export=download&id=1ZEZYm9WwkBPiY4387VJ35kE7YkFiavka"
-            download="Ellis_Cv"
-          >
-            <Image
-              src={pikachu}
-              alt=""
-              className="flex justify-center m-0  w-16 h-16 animate-bounce"
-            />
-          </a>
-        </div>
+        <span className="text-lg lg:text-2xl font-semibold my-2">{text}</span>
+        <Cursor cursorColor="#fd0000" />
       </div>
     </motion.div>
   );

@@ -13,7 +13,7 @@ function Projects({ projects }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-x-full justify-evenly mx-auto items-center z-0 "
+      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row w-full justify-evenly mx-auto items-center z-0 "
     >
       <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl text-center">
         Projects
@@ -23,7 +23,7 @@ function Projects({ projects }: Props) {
         {projects?.map((project, i) => (
           <div
             key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center p-20 md:p-44 md:mt-4"
+            className="w-full flex-shrink-0 snap-center flex flex-col space-y-2 items-center justify-center md:p-20 p-4 md:mt-4"
           >
             <a href={project?.linkToBuild} target="_blank">
               <motion.img
@@ -32,22 +32,23 @@ function Projects({ projects }: Props) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 src={urlFor(project?.image).url()}
-                alt=""
+                alt="image"
+                className="object-fill"
               />
             </a>
 
-            <div className="space-y-2 px-0 md:px-10 max-w-6xl">
+            <div className="space-y-2 px-0 md:px-4 md:max-w-6xl">
               <h4 className="text-2xl font-semibold text-center">
                 <span className="underline decoration-[#fd00000]/50">
-                  Project {i + 1} of {projects.length} : <br />
+                  Project {i + 1} of {projects.length}  <br />
                 </span>
                 {project?.title}
               </h4>
 
-              <div className="flex items-center space-x-2 justify-center">
+              <div className="flex items-center space-x-2 justify-center w-full ">
                 {project?.technologies.map((technology) => (
                   <img
-                    className="h-10 w-10"
+                    className="w-10 flex flex-col mx-0"
                     key={technology._id}
                     src={urlFor(technology.image).url()}
                     alt=""
@@ -55,7 +56,7 @@ function Projects({ projects }: Props) {
                 ))}
               </div>
 
-              <p className="text-md text-center md:text-left">
+              <p className="text-md text-justify md:text-left">
                 {project?.summary}
               </p>
             </div>
